@@ -1,0 +1,231 @@
+// Colours
+//  Primary
+
+$green-400: hsl(172, 67%, 45%);
+$green-200: hsl(173, 61%, 77%);
+
+//  Neutral
+
+$green-900: hsl(183, 100%, 15%);
+$grey-500: hsl(186, 14%, 43%);
+$grey-400: hsl(184, 14%, 56%);
+$grey-200: hsl(185, 41%, 84%);
+$grey-50: hsl(189, 47%, 97%);
+$white: hsl(0, 100%, 100%);
+
+// Error
+$orange-400: hsl(13, 70, 60);
+
+// Breakpoints
+$breakpoints: (
+    mobile: 375px,
+    desktop: 1440px
+);
+
+// Typography
+$font-size: 24px;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+$font-family: "Space Mono";
+
+* {
+    box-sizing: border-box;
+    font-size: $font-size;
+    font-family: $font-family, monospace;
+    font-weight: 700;
+}
+
+main {
+    display: grid;
+    place-items: center;
+
+    min-height: 100vh;
+    
+    background-color: $grey-200;
+
+    // logo
+    background-image: url("../images/logo.svg");
+    background-color: $grey-200;
+    background-repeat: no-repeat;
+    background-position: center 7.5%;
+}
+
+
+.calculator-card {
+    display: grid;
+    gap: 4rem;
+    grid-template-columns: 1fr 1fr;
+
+    padding: 2rem;
+
+    border-radius: 25px;
+
+    background-color: $white;
+}
+
+label, 
+legend {
+    font-size: 16px;
+    color: $grey-500;   
+}
+
+label {
+    margin-bottom: 1rem;
+}
+
+input {
+    border: 2px solid transparent;
+    border-radius: 5px;
+}
+
+input[type="number"] {
+    background-color: $grey-50;
+    color: $green-900;
+
+    appearance: textfield;
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+        appearance: none;
+        margin: 0;
+    }   
+
+    &:focus,
+    &:hover {
+        border-color: $green-400;
+        outline: none
+    }
+}
+
+input[type="button"] {
+    padding-block: 0.4rem;
+    
+    background-color: $green-900;
+    color: $white;
+    
+    cursor: pointer;
+    
+    
+    &.active {
+        background-color: $green-400;
+        color: $green-900;
+    }
+    
+    &:hover {
+        background-color: $green-200;
+        color: $green-900;
+    }
+}
+
+#bill-amount {
+    background-image: url("../images/icon-dollar.svg");
+}
+
+#no-of-people {
+    background-image: url("../images/icon-person.svg");
+}
+
+#bill-amount, #no-of-people {
+    padding-left: 2.5rem;
+    padding-right: 1rem;
+
+    text-align: right;
+
+    background-repeat: no-repeat;
+    background-position: 1rem center;
+}
+
+.user-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    > * {
+        padding-block: 1.5rem;
+    }
+    
+    .bill-amount,
+    .no-of-people {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tip-percentage {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: space-between;
+        gap: 1rem;
+
+        > input {
+            width: 7rem;
+            text-align: center;
+        }
+    }
+
+}
+
+.error-message {
+    font-size: 16px;
+    color: $orange-400;
+    visibility: hidden;
+}
+
+.invalid-input {
+    border-color: $orange-400;
+}
+
+.field-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    
+    padding: 3rem;
+
+    background-color: $green-900;
+
+    border-radius: 25px;
+
+    .tip-amount,
+    .total-amount {
+        display: flex;
+        justify-content: space-between;
+
+        p:first-of-type {
+            color: $white;
+            font-size: 16px;
+            margin-bottom: .5rem;
+        }
+
+        p:nth-of-type(2) {
+            color: $grey-400;
+            font-size: 13px;
+        }
+    }
+}
+
+input[type="reset"] {
+    background-color: $green-400;
+    margin-block-start: auto;
+
+    text-transform: uppercase;
+
+    font-size: 20px;
+
+    padding: 0.5rem;
+
+    cursor: pointer;
+
+    &:hover {
+        background-color: $green-200;
+    }
+}
+
+output {
+    color: $green-400;
+
+    font-size: 48px;
+}

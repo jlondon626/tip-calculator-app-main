@@ -4,41 +4,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Tip calculator app</title>
+  <link rel="stylesheet" href="assets/css/normalise.css">  
+  <link rel="stylesheet" href="assets/css/styles.css">  
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 0.6875rem; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <script src="assets/js/index.js" defer></script>
+  <title>Frontend Mentor | Tip calculator app</title>
 </head>
 <body>
-
-  Bill
-
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
-  
-  <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </footer>
+  <main>
+    <form>
+      <article class="calculator-card">
+        <section class="user-section">
+          <div class="bill-amount">
+            <div class="field-header">
+              <label for="bill-amount">Bill</label>
+              <p id="bill-amount__error-message" class="error-message">Invalid amount</p>
+            </div>
+            <input type="number" min="0" step="0.01" name="bill-amount" id="bill-amount" value="0.00">
+          </div>
+          <fieldset class="tip-percentage">
+            <legend>Select Tip %</legend>
+            <input name="5%-tip" type="button" value="5%">
+            <input class="active" name="10%-tip" type="button" value="10%">
+            <input name="15%-tip" type="button" value="15%">
+            <input name="25%-tip" type="button" value="25%">
+            <input name="50%-tip" type="button" value="50%">
+            <input id="custom-tip" name="custom-tip" type="number" placeholder="Custom">
+          </fieldset>
+          <div class="no-of-people">
+            <div class="field-header">
+              <label for="no-of-people">Number of People</label>
+              <p id="no-of-people__error-message" class="error-message">Must be +ve integer</p>
+            </div>
+            <input name="no-of-people" type="number" min="1" step="1" id="no-of-people" value="1">
+          </div>
+        </section>
+        <section class="results">
+          <div class="tip-amount">
+            <div>
+              <p>Tip Amount</p>
+              <p>/ person</p>
+            </div>
+            <output>$4.33</output>
+          </div>
+          <div class="total-amount">
+            <div>
+              <p>Total</p>
+              <p>/ person</p>
+            </div>
+            <output>$35.13</output>
+          </div>
+          <input type="reset" id="reset-button" value="Reset">
+        </section>
+      </article>
+    </form>
+  </main>
 </body>
 </html>

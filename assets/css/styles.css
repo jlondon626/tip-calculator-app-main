@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+* {
+  box-sizing: border-box;
+  font-size: 24px;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+}
+
+main {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background-color: hsl(185, 41%, 84%);
+  background-image: url("../images/logo.svg");
+  background-color: hsl(185, 41%, 84%);
+  background-repeat: no-repeat;
+  background-position: center 7.5%;
+}
+
+.calculator-card {
+  display: grid;
+  gap: 4rem;
+  grid-template-columns: 1fr 1fr;
+  padding: 2rem;
+  border-radius: 25px;
+  background-color: hsl(0, 100%, 100%);
+}
+
+label,
+legend {
+  font-size: 16px;
+  color: hsl(186, 14%, 43%);
+}
+
+label {
+  margin-bottom: 1rem;
+}
+
+input {
+  border: 2px solid transparent;
+  border-radius: 5px;
+}
+
+input[type=number] {
+  background-color: hsl(189, 47%, 97%);
+  color: hsl(183, 100%, 15%);
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+  margin: 0;
+}
+input[type=number]:focus, input[type=number]:hover {
+  border-color: hsl(172, 67%, 45%);
+  outline: none;
+}
+
+input[type=button] {
+  padding-block: 0.4rem;
+  background-color: hsl(183, 100%, 15%);
+  color: hsl(0, 100%, 100%);
+  cursor: pointer;
+}
+input[type=button].active {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+}
+input[type=button]:hover {
+  background-color: hsl(173, 61%, 77%);
+  color: hsl(183, 100%, 15%);
+}
+
+#bill-amount {
+  background-image: url("../images/icon-dollar.svg");
+}
+
+#no-of-people {
+  background-image: url("../images/icon-person.svg");
+}
+
+#bill-amount, #no-of-people {
+  padding-left: 2.5rem;
+  padding-right: 1rem;
+  text-align: right;
+  background-repeat: no-repeat;
+  background-position: 1rem center;
+}
+
+.user-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.user-section > * {
+  padding-block: 1.5rem;
+}
+.user-section .bill-amount,
+.user-section .no-of-people {
+  display: flex;
+  flex-direction: column;
+}
+.user-section .tip-percentage {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  gap: 1rem;
+}
+.user-section .tip-percentage > input {
+  width: 7rem;
+  text-align: center;
+}
+
+.error-message {
+  font-size: 16px;
+  color: hsl(13, 70%, 60%);
+  visibility: hidden;
+}
+
+.invalid-input {
+  border-color: hsl(13, 70%, 60%);
+}
+
+.field-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 3rem;
+  background-color: hsl(183, 100%, 15%);
+  border-radius: 25px;
+}
+.results .tip-amount,
+.results .total-amount {
+  display: flex;
+  justify-content: space-between;
+}
+.results .tip-amount p:first-of-type,
+.results .total-amount p:first-of-type {
+  color: hsl(0, 100%, 100%);
+  font-size: 16px;
+  margin-bottom: 0.5rem;
+}
+.results .tip-amount p:nth-of-type(2),
+.results .total-amount p:nth-of-type(2) {
+  color: hsl(184, 14%, 56%);
+  font-size: 13px;
+}
+
+input[type=reset] {
+  background-color: hsl(172, 67%, 45%);
+  margin-block-start: auto;
+  text-transform: uppercase;
+  font-size: 20px;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+input[type=reset]:hover {
+  background-color: hsl(173, 61%, 77%);
+}
+
+output {
+  color: hsl(172, 67%, 45%);
+  font-size: 48px;
+}/*# sourceMappingURL=styles.css.map */
